@@ -1,0 +1,40 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Sobre Macroviajes</h4>
+        <p>Descubre los secretos mejor guardados de México y el mundo. Tu guía para experiencias auténticas y destinos inolvidables.</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Explora</h4>
+        <ul>
+          <li><a href="{{ '/' | relative_url }}">Inicio</a></li>
+          <li><a href="/blog/">Todas las Aventuras</a></li>
+          <li><a href="/sobre-nosotros/">Nuestra Historia</a></li>
+          <li><a href="/contacto/">Contáctanos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Síguenos</h4>
+        <ul>
+          <li><a href="#" target="_blank">Instagram</a></li>
+          <li><a href="#" target="_blank">Facebook</a></li>
+          <li><a href="#" target="_blank">Twitter</a></li>
+          <li><a href="{{ '/feed.xml' | relative_url }}">RSS Feed</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contacto</h4>
+        <p>Email: info@macroviajes.com</p>
+        <p>¿Tienes un destino secreto que compartir?<br>¡Nos encantaría saber de ti!</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>

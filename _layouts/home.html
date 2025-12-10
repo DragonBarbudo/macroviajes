@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="container">
+    <h1 class="fade-in-up">{{ site.tagline }}</h1>
+    <p class="fade-in-up">Tu guía definitiva para explorar los rincones más fascinantes y menos conocidos de México y el mundo</p>
+    <a href="#posts" class="cta-button fade-in-up">Explorar Destinos</a>
+  </div>
+</section>
+
+<section class="section" id="posts">
+  <div class="container">
+    <h2 class="section-title">Últimas Aventuras</h2>
+
+    <div class="posts-grid">
+      {% for post in site.posts limit:6 %}
+        <article class="post-card">
+          <div class="post-card-image">
+            {% if post.emoji %}
+              <span>{{ post.emoji }}</span>
+            {% else %}
+              <span>🌎</span>
+            {% endif %}
+          </div>
+          <div class="post-card-content">
+            <div class="post-meta">
+              <span class="post-category">{{ post.category | default: "Destino" }}</span>
+              <span class="post-date">{{ post.date | date: "%d %B, %Y" }}</span>
+            </div>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    {% if site.posts.size > 6 %}
+      <div class="text-center mt-4">
+        <a href="/blog/" class="cta-button">Ver Todos los Destinos</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section" style="background: var(--bg-light);">
+  <div class="container content">
+    <h2 class="section-title">Sobre Macroviajes</h2>
+    <p style="text-align: center; font-size: 1.1rem; color: var(--text-light);">
+      Somos apasionados viajeros dedicados a descubrir y compartir los secretos mejor guardados
+      de México y el mundo. Nuestro objetivo es inspirarte a explorar más allá de los destinos
+      turísticos convencionales y descubrir la auténtica esencia de cada lugar.
+    </p>
+  </div>
+</section>

@@ -1,0 +1,63 @@
+# Configuración del sitio
+title: Macroviajes.com
+tagline: Descubre los secretos DE MÉXICO Y EL MUNDO
+description: >-
+  Tu guía definitiva para explorar los rincones más fascinantes y menos conocidos
+  de México y el mundo. Descubre destinos auténticos, experiencias únicas y
+  aventuras inolvidables.
+
+baseurl: ""
+url: "https://macroviajes.com"
+
+# Configuración de idioma
+lang: es
+timezone: America/Mexico_City
+
+# Autor
+author:
+  name: Macroviajes
+  email: info@macroviajes.com
+
+# Construcción
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Colecciones
+collections:
+  destinations:
+    output: true
+    permalink: /destinos/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Macroviajes"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Excluir archivos
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+
+# Feed
+feed:
+  title: Macroviajes Blog
+  description: Descubre los secretos de México y el mundo
+  lang: es
