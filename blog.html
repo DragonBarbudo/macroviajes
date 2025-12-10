@@ -1,0 +1,32 @@
+---
+layout: default
+title: Blog
+---
+
+<section class="section">
+  <div class="container">
+    <h1 class="section-title">Todas Nuestras Aventuras</h1>
+
+    <div class="posts-grid">
+      {% for post in site.posts %}
+        <article class="post-card">
+          <div class="post-card-image">
+            {% if post.emoji %}
+              <span>{{ post.emoji }}</span>
+            {% else %}
+              <span>🌎</span>
+            {% endif %}
+          </div>
+          <div class="post-card-content">
+            <div class="post-meta">
+              <span class="post-category">{{ post.category | default: "Destino" }}</span>
+              <span class="post-date">{{ post.date | date: "%d %B, %Y" }}</span>
+            </div>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
